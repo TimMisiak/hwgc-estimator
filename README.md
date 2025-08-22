@@ -9,3 +9,12 @@ docker compose up --build
 ```
 
 Then open <http://localhost:8000> to view the sheet.
+
+## Development
+
+Install the JavaScript dependencies so the import map in `templates/index.html` can resolve modules:
+
+```bash
+npm install
+python app.py
+```
