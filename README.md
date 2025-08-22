@@ -12,9 +12,10 @@ Then open <http://localhost:8000> to view the sheet.
 
 ## Development
 
-Install the JavaScript dependencies so the import map in `templates/index.html` can resolve modules:
+Install the JavaScript dependencies, build the bundle with Vite, and start the Flask app:
 
 ```bash
 npm install
+npm run build
 python app.py
 ```
