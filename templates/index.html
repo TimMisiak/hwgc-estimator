@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Univer Sheets Demo</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@univerjs/sheets-ui@latest/dist/index.css" />
+    <link rel="stylesheet" href="/node_modules/@univerjs/sheets-ui/lib/index.css" />
     <style>
         html, body, #univer-container {
             height: 100%;
@@ -13,24 +13,19 @@
 </head>
 <body>
     <div id="univer-container"></div>
-    <script src="https://cdn.jsdelivr.net/npm/@univerjs/core@latest/dist/index.umd.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@univerjs/engine-render@latest/dist/index.umd.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@univerjs/ui@latest/dist/index.umd.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@univerjs/sheets@latest/dist/index.umd.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@univerjs/sheets-ui@latest/dist/index.umd.js"></script>
-    <script>
-        const { Univer } = window.UniverCore;
-        const { UniverRenderEnginePlugin } = window.UniverEngineRender;
-        const { UniverUIPlugin } = window.UniverUI;
-        const { UniverSheetsPlugin } = window.UniverSheets;
-        const { UniverSheetsUIPlugin } = window.UniverSheetsUI;
+    <script type="module">
+        import { Univer, UniverInstanceType } from '/node_modules/@univerjs/core/lib/index.js';
+        import { UniverRenderEnginePlugin } from '/node_modules/@univerjs/engine-render/lib/index.js';
+        import { UniverUIPlugin } from '/node_modules/@univerjs/ui/lib/index.js';
+        import { UniverSheetsPlugin } from '/node_modules/@univerjs/sheets/lib/index.js';
+        import { UniverSheetsUIPlugin } from '/node_modules/@univerjs/sheets-ui/lib/index.js';
 
         const univer = new Univer({ locale: 'en' });
         univer.installPlugin(new UniverRenderEnginePlugin());
         univer.installPlugin(new UniverUIPlugin({ container: 'univer-container' }));
         univer.installPlugin(new UniverSheetsPlugin());
         univer.installPlugin(new UniverSheetsUIPlugin());
-        univer.createUnit(Univer.UniverInstanceType.UNIVER_SHEET);
+        univer.createUnit(UniverInstanceType.UNIVER_SHEET);
     </script>
 </body>
 </html>
