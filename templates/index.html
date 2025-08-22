@@ -3,22 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Univer Sheets Demo</title>
-    <link rel="stylesheet" href="/node_modules/@univerjs/sheets-ui/lib/index.css" />
-    <script type="importmap">
-        {
-            "imports": {
-                "@univerjs/core": "/node_modules/@univerjs/core/lib/index.js",
-                "@univerjs/engine-render": "/node_modules/@univerjs/engine-render/lib/index.js",
-                "@univerjs/ui": "/node_modules/@univerjs/ui/lib/index.js",
-                "@univerjs/sheets": "/node_modules/@univerjs/sheets/lib/index.js",
-                "@univerjs/sheets-ui": "/node_modules/@univerjs/sheets-ui/lib/index.js",
-                "@univerjs/themes": "/node_modules/@univerjs/themes/lib/index.js",
-                "@wendellhu/redi": "/node_modules/@wendellhu/redi/dist/esm/index.js",
-                "rxjs": "/node_modules/rxjs/dist/esm/index.js",
-                "rxjs/operators": "/node_modules/rxjs/dist/esm/operators/index.js"
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
     <style>
         html, body, #univer-container {
             height: 100%;
@@ -28,19 +13,6 @@
 </head>
 <body>
     <div id="univer-container"></div>
-    <script type="module">
-        import { Univer, UniverInstanceType } from '@univerjs/core';
-        import { UniverRenderEnginePlugin } from '@univerjs/engine-render';
-        import { UniverUIPlugin } from '@univerjs/ui';
-        import { UniverSheetsPlugin } from '@univerjs/sheets';
-        import { UniverSheetsUIPlugin } from '@univerjs/sheets-ui';
-
-        const univer = new Univer({ locale: 'en' });
-        univer.installPlugin(new UniverRenderEnginePlugin());
-        univer.installPlugin(new UniverUIPlugin({ container: 'univer-container' }));
-        univer.installPlugin(new UniverSheetsPlugin());
-        univer.installPlugin(new UniverSheetsUIPlugin());
-        univer.createUnit(UniverInstanceType.UNIVER_SHEET);
-    </script>
+    <script type="module" src="{{ url_for('static', filename='main.js') }}"></script>
 </body>
 </html>

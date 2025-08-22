@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Flask app demonstrating Univer Sheets",
   "scripts": {
-    "start": "python app.py"
+    "start": "python app.py",
+    "dev": "vite",
+    "build": "vite build"
   },
   "dependencies": {
     "@univerjs/core": "^0.10.5",
@@ -12,5 +14,8 @@
     "@univerjs/sheets": "^0.10.5",
     "@univerjs/sheets-ui": "^0.10.5",
     "univer": "^0.0.5"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
   }
 }
