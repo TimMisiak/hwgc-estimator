@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Univer Sheets Demo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@univerjs/sheets-ui@latest/dist/index.css" />
+    <style>
+        html, body, #univer-container {
+            height: 100%;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="univer-container"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@univerjs/core@latest/dist/index.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@univerjs/engine-render@latest/dist/index.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@univerjs/ui@latest/dist/index.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@univerjs/sheets@latest/dist/index.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@univerjs/sheets-ui@latest/dist/index.umd.js"></script>
+    <script>
+        const { Univer } = window.UniverCore;
+        const { UniverRenderEnginePlugin } = window.UniverEngineRender;
+        const { UniverUIPlugin } = window.UniverUI;
+        const { UniverSheetsPlugin } = window.UniverSheets;
+        const { UniverSheetsUIPlugin } = window.UniverSheetsUI;
+
+        const univer = new Univer({ locale: 'en' });
+        univer.installPlugin(new UniverRenderEnginePlugin());
+        univer.installPlugin(new UniverUIPlugin({ container: 'univer-container' }));
+        univer.installPlugin(new UniverSheetsPlugin());
+        univer.installPlugin(new UniverSheetsUIPlugin());
+        univer.createUnit(Univer.UniverInstanceType.UNIVER_SHEET);
+    </script>
+</body>
+</html>
